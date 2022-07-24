@@ -5,6 +5,11 @@ from .models import Post, Category
 from .forms import PostForm, EditForm
 
 
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats)
+    return render(request, 'categories.html', {'cats': cats.title(), 'category_posts': category_posts})
+
+
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
