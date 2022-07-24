@@ -14,6 +14,7 @@ class Category(models.Model):
         return reverse('home')
 
 
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
     title_tag = models.CharField(max_length=255)

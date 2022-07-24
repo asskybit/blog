@@ -13,7 +13,7 @@
                 <small>
 
 
-                    {% if user.is_authenticated %}
+                    {% if user.is_authenticated  and user.id == post.author_id %}
                         - <a href="{% url 'update_post' post.pk %}">(Edit) </a>
                         <a href="{% url 'delete_post' post.pk %}">(Delete) </a>
                     {% endif %}
