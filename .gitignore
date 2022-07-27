@@ -140,3 +140,8 @@ GitHub.sublime-settings
 # SECRET_KEY
 !/simpleblog/secret_key.py
 
+# MEDIA
+!/media/
+
+# VENV
+!/venv/
