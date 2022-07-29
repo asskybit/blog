@@ -55,9 +55,9 @@
         <div class="row no-gutters">
             <div class="col-md-2">
                 {% if  post.author.profile.profile_pic %}
-                    <img src="{{ post.author.profile.profile_pic.url }}">
+                    <img src="{{ post.author.profile.profile_pic.url }}" class="card-img">
                 {% else %}
-                    <img src="{% static 'theblog/images/default-profile-pic.png' %}" width="200" height="200">
+                    <img src="{% static 'theblog/images/default-profile-pic.png' %}" class="card-img">
 
                 {% endif %}
 
@@ -67,8 +67,9 @@
                     <h5 class="card-title">
                         {{ post.author.first_name }}
                         {{ post.author.last_name }}</h5>
+                    <a href="{% url 'show_profile_page' post.author.profile.id %}">Profile Page </a>
                     {% if post.author.profile.telegram_url %}
-                        <p class="small text-muted"><a href="{{ post.author.profile.telegram_url }}">Telegram</a></p>
+                        | <p class="small text-muted"><a href="{{ post.author.profile.telegram_url }}">Telegram</a></p>
                     {% endif %}
                     <p class="card-text">{{ post.author.profile.bio }}</p>
 
